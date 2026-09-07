@@ -34,12 +34,12 @@ FEATURE_LABELS = {
 
 
 @st.cache_data
- def load_data():
+def load_data():
     return pd.read_csv(DATA_PATH)
 
 
 @st.cache_resource
- def train_model(data):
+def train_model(data):
     X = data[FEATURES]
     y = data["performance_score"]
     X_train, X_test, y_train, y_test = train_test_split(
@@ -72,7 +72,6 @@ st.caption("Educational portfolio project • Random Forest Regression • Strea
 
 st.divider()
 
-# Project overview
 m1, m2, m3, m4 = st.columns(4)
 m1.metric("Dataset Rows", f"{len(df):,}")
 m2.metric("Input Features", len(FEATURES))
